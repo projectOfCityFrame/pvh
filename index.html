@@ -9,8 +9,28 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/jquery.countdown.css" rel="stylesheet">
     <link href="css/style_d.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/menu1.js"></script>
+    <script src="js/jquery.countdown.js"></script>
+    <script src="js/script.js"></script>
+
+    <script type="text/javascript">
+    $(function() {
+        $("#contact-button").on('click', function(e) {
+            $('html,body').stop().animate({
+                scrollTop: $('#contact').offset().top - 50
+            }, 400);
+            e.preventDefault();
+        });
+    });
+    </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,11 +42,10 @@
   <body>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/js.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <div class="navbar navbar-default" role="navigation">
+    
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -38,65 +57,92 @@
             <a class="navbar-brand" href="index/html">Вентэкко</a>
           </div>
           <div class="navbar-collapse collapse">
+          <div id="header-nav">
             <ul class="nav navbar-nav ">
-              <li><a href="#">Сфера деятельности</a></li>
+              <li><a href="#top">Главная</a></li>
               <li><a href="#utp">Преимущества</a></li>
               <li><a href="#portfolio">Портфолио</a></li>
-              <li><a href="#">dfvdf</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">fvdv</a></li>
+              <li><a href="#problems">Проблемы</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+              <li><a href="#contact">Оставить заявку</a></li>
               <li><a href="#">Link</a></li>
             </ul>
+          </div>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </div>
-    <header>
-      <div class="container">
+    <header id="top">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12 text-center">
-          <img class="general-img" src="images/check.png" alt="">
+          <div class="col-md-6 text-center" style="padding-left: 70px; padding-right: 70px;">
+          <img class="general-img" src="images/logo.png" alt="">
           <div class="intro-text">
             <span class="name">ООО «Вентэкко»</span>
             <p class="skills">Профнастил из ПВХ. Продажа оптом и в розницу по Кировской области и Республике Коми.</p>
           </div>
           </div>
+
+          <div class="col-md-6 text-center" style="padding-left: 70px; padding-right: 70px;">
+          <h1 class="">Акция!</h1>
+          <p class="action">Хочешь стать представителем нашего продукта в своём регионе?
+          Оставь заявку и получи коммерческое предложение на Спец условиях!
+          Список партнёров для работы на Спец условиях формируется уже сегодня!
+          <br><b>До конца формирования списка партнеров осталось:</b></p>
+          
+
+          <div id="countdown" class="countdownHolder">
+               <span class="countDays">
+                <span class="position">
+                  <span class="digit static"></span>
+               </span>
+               <span class="position">
+                <span class="digit static"></span>
+               </span>
+               </span>
+                  <span class="countDiv countDiv0"></span>
+              <span class="countHours">
+                   <span class="position">
+               <span class="digit static"></span>
+               </span>
+               <span class="position">
+               <span class="digit static"></span>
+               </span>
+               </span>
+              <span class="countDiv countDiv1"></span>
+              <span class="countMinutes">
+               <span class="position">
+               <span class="digit static"></span>
+               </span>
+               <span class="position">
+               <span class="digit static"></span>
+               </span>
+               </span>
+              <span class="countDiv countDiv2"></span>
+              <span class="countSeconds">
+               <span class="position">
+               <span class="digit static"></span>
+               </span>
+               <span class="position">
+               <span class="digit static"></span>
+               </span>
+               </span>
+          </div>
+          <p id="note"></p>
+          
+          <a id="contact-button" href="#contact" class="btn btn-primary" role="button">Оставить заявку</a>
+
+
+          </div>
+
         </div>
       </div>
     </header>
       <section id="utp">
-      <div class="container">
+        <div class="container-advantages">
         <div class="row">
         <div class="col-md-12 text-center">
         <h1 class="text-center indent text-preview">Преимущества</h1>
         </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="images/check.png" alt="...">
-            <div class="caption">
-                <p class="info">Профнастил из ПВХ не горит, не тонет, восстанавливает форму.</p>
-                </div>
-            </div>
-          </div>
-           <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="images/star.png" alt="...">
-            <div class="caption">
-                <p class="info">Пожизненная гарантия.</p>
-                </div>
-            </div>
-          </div>
-           <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="images/tools.png" alt="Responsive image">
-            <div class="caption">
-                <p class="info">Проверено тяжёлой техникой в экстримальных условиях</p>
-                </div>
-            </div>
-          </div>
-        </div>
-        </div>
-        <div class="container-advantages">
-        <div class="row">
         <div class="col-sm-6 col-md-1-5">
           <div class="thumbnail">
             <img src="images/interstate.png" alt="...">
@@ -160,7 +206,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="images/9.jpg" class="img-responsive" alt="">
+                        <img src="images/фото1.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -170,7 +216,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="images/9.jpg" class="img-responsive" alt="">
+                        <img src="images/фото2.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -180,7 +226,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="images/9.jpg" class="img-responsive" alt="">
+                        <img src="images/фото3.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -190,7 +236,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="images/9.jpg" class="img-responsive" alt="">
+                        <img src="images/фото4.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -200,7 +246,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="images/9.jpg" class="img-responsive" alt="">
+                        <img src="images/фото5.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -210,7 +256,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="images/9.jpg" class="img-responsive" alt="">
+                        <img src="images/фото6.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
@@ -229,14 +275,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <h2>Завод по переработке бумаги, г.Балахна:</h2>
+                            <img src="images/Фото0163.jpg" class="img-responsive img-centered" alt="">
+                            <p></p>
                             <ul class="list-inline item-details">
                                 <li>
                                     <strong><a href=""></a>
@@ -270,14 +311,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <h2>Забор стройплощадки в г.Лангепас:</h2>
+                            <img src="images/WIN_20140821_154320.jpg" class="img-responsive img-centered" alt="">
+                            <p></p>
                             <ul class="list-inline item-details">
                                 <li>
                                     <strong><a href=""></a>
@@ -311,14 +347,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <h2>Крыша частного дома в пос.Вача:</h2>
+                            <img src="images/P1120909.jpg" class="img-responsive img-centered" alt="">
+                            <p></p>
                             <ul class="list-inline item-details">
                                 <li>
                                     <strong><a href=""></a>
@@ -352,14 +383,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <h2>Внешняя отделка стен КПП на заводе в г.Арзамас:</h2>
+                            <img src="images/IMG10104.jpg" class="img-responsive img-centered" alt="">
+                            <p></p>
                             <ul class="list-inline item-details">
                                 <li>
                                     <strong><a href=""></a>
@@ -393,14 +419,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <h2>Забор стройплощадки ООО «Стройгаз-НН» по адресу пос.Ждановский, ул.Школьная:</h2>
+                            <img src="images/f7906406c06b8a20dfd0245167435677.jpg" class="img-responsive img-centered" alt="">
+                            <p></p>
                             <ul class="list-inline item-details">
                                 <li>
                                     <strong><a href=""></a>
@@ -434,14 +455,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <h2>Внутренняя отделка помещения под автосервис в г.Павлово:</h2>
+                            <img src="images/2фото-2.jpg" class="img-responsive img-centered" alt="">
+                            <p></p>
                             <ul class="list-inline item-details">
                                 <li>
                                     <strong><a href=""></a>
@@ -463,6 +479,171 @@
             </div>
         </div>
     </div>
+ 
+<section id="problems">
+  <div class="container-advantages">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h1 class="text-center indent text-preview">Проблемы</h1>
+    </div>
+  </div>
+    <div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="images/barchart.png" alt="...">
+      <div class="caption">
+        <h3 class="text-center info">Деформация конструкций</h3>
+        <p class="advantages">
+        </p>
+        <p><a data-target="#myModal" class="btn btn-primary" role="button" data-toggle="modal">Решение</a></p>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="text-modal" id="myModalLabel">Восстанавливает первозданную форму.</h4>
+      </div>
+      <div class="modal-body">
+        <p class="advantages">Гибкость нашего материала не имеет аналогов и проверенно тяжелой техникой. Что даёт Вам 100% гарантию качества на протяжение всего времени.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="images/RoundIcons-Free-Set-32.png" alt="...">
+      <div class="caption">
+        <h3 class="text-center info">Коррозия</h3>
+        <p class="advantages">
+        </p>
+        <p><a data-target="#myModal2" class="btn btn-primary" role="button" data-toggle="modal">Решение</a></p>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="text-modal" id="myModalLabel">Антикорозийность</h4>
+      </div>
+      <div class="modal-body">
+        <p class="advantages">Материал на основе ПВХ абсолютно не подвергается коррозии, что значительно продливает срок эксплуатации нашего материала.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="images/tools.png" alt="...">
+      <div class="caption">
+        <h3 class="text-center info">Сложность в установке</h3>
+        <p class="advantages">
+        </p>
+        <p><a data-target="#myModal3" class="btn btn-primary" role="button" data-toggle="modal">Решение</a></p>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="text-modal" id="myModalLabel">Простота установки</h4>
+      </div>
+      <div class="modal-body">
+        <p class="advantages">В комплекте с каждой партией мы предоставляем подробную инструкцию с рекомендациями по монтажу наших конструкций с рекомендациями.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="images/RoundIcons-Free-Set-11.png" alt="...">
+      <div class="caption">
+        <h3 class="text-center info">Высокая стоимость установки и обслуживания</h3>
+        <p class="advantages">
+        </p>
+        <p><a data-target="#myModal4" class="btn btn-primary" role="button" data-toggle="modal">Решение</a></p>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="text-modal" id="myModalLabel">Остерегайтесь подделок!</h4>
+      </div>
+      <div class="modal-body">
+        <p class="advantages">Наша компания является официальным представителем в Кировской обл. и Респ. Коми.
+        Наш продукт не имеет аналогов на рынке. 
+        Минимальная стоимость для дилеров в России составляет от 247 рублей за кв метр.
+        Это минимальная стоимость за кв метр покрытий подобного типа, и всё остальное имеет сомнительное качество и производство…
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+  </section>
+
+  <section id="reviews">
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="indent text-preview">Отзывы</h1>
+                </div>
+              <div class="col-lg-6 text-center">
+                <img src="images/profile1.png" alt="..." class="img-circle">
+                    <h3 class="text-center info" style="padding-bottom: 20px;"><b>Валентин Устрецов</b></h3>
+                    <h4 class="advantages">г. Сыктывкар</h4>
+                      <p class="text-content">Строил себе дачу и возникла необходимость в установке крышы. Так как в последствии мне необходимо было делать забор, узнал что данный материал возможен в применении для заборов, кровли и облицовке. Так что запасся данным материалом почти по всей цветовой гамме. 
+                      Планирую на гараж такой заказать.</p>
+
+            </div>
+
+             <div class="col-lg-6 text-center">
+                <img src="images/profile2.png" alt="..." class="img-circle">
+                    <h3 class="text-center info" style="padding-bottom: 20px;"><b>Андрей Воронцов</b></h3>
+                    <h4 class="advantages">Инженер проекта компания «Глав Рыба»</h4>
+
+                      <p class="text-content">В нашем колхозе нам постоянно приходится использовать различные добавки. Обратились в Компанию Валери по рекомендации, так как сказали что они сами добывают полезные удобрения в г. Кирове, что для меня и для моего колхоза было очень удобно.
+                      По качеству и по цене в разы превышает все показатели! 
+                      Радует то, что он без химии, и это дары того что нам природа дала.
+                      </p>
+
+            </div>
+
+        </div>
+    </div>
+  </section>
+
   <section id="contact">
        <div class="container">
             <div class="row">
@@ -507,7 +688,7 @@
         </div>
   </section>
   <footer>
-    
+    <p class="footer-text text-center">© Вентэкко, 2015</p>
   </footer>
   </body>
 </html>
